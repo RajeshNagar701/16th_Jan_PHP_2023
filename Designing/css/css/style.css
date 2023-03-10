@@ -1,0 +1,33 @@
+	h1,h2,h3{
+		color:red;
+		background-color:yellow;
+		font-size:20px;
+		text-align:center;
+	}
+	
+	.mystyle{
+		color:pink;
+		background-color:blue;
+	}
+	
+	.upper{
+		text-transform:uppercase;
+	}
+	
+	#mycss{
+		color:orange;
+		background-color:green;
+	}
+	
+	
+	.box{
+		height:100px;
+		width:200px;
+		background-color:LightGray;
+	}
+	
+	.box h1{
+		color:red;
+		background-color:pink;
+	}
+	
