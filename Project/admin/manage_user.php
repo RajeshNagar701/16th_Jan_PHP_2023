@@ -24,23 +24,42 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+											<th>Profile</th>
                                             <th>User ID</th>
+											<th>Name</th>
                                             <th>User Name</th>
+											<th>Gender</th>
+											<th>Lag</th>
+											<th>Countries</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Raj</td>
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
-											</td>
-                                        
-                                            
-                                        </tr>
+                                        <?php
+									if(!empty($customer_arr))
+									{
+										foreach($customer_arr as $data)
+										{
+										?>
+											<tr class="odd gradeX">
+												<td><img src="../web/upload/customer/<?php echo $data->file;?>" width="50px"></td>
+												<td><?php echo $data->uid;?></td>
+												<td><?php echo $data->name;?></td>
+												<td><?php echo $data->unm;?></td>
+												<td><?php echo $data->gen;?></td>
+												<td><?php echo $data->lag;?></td>
+												<td><?php echo $data->cid;?></td>
+												
+												<td>
+													<a href="#" class="btn btn-primary">Edit</a>
+													<a href="#" class="btn btn-danger">Delete</a>
+													<a href="#" class="btn btn-success"><?php echo $data->status;?></a>
+												</td>        
+											</tr>
+										<?php
+										}
+									}
+									?>    
                                         
                                     </tbody>
                                 </table>

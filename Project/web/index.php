@@ -55,16 +55,39 @@
 			</div>
 			
 			
+			<?php
+			if(isset($_SESSION['uid']))
+			{
+			?>
+				<div class="col-md-4 top-forms mt-md-3 mt-2 mb-md-0 mb-3">
+					<span class="mx-lg-4 mx-md-2  mx-1">
+						<a href="profile" >
+							<i class="fas fa-lock"></i> hi.. <?php echo $_SESSION['name']?>
+						</a>
+					</span>
+					<span>
+						<a href="logout" >
+							<i class="fas fa-user"></i> Logout</a>
+					</span>
+			</div>
+			<?php
+			}
+			else
+			{
+			?>
 			<div class="col-md-4 top-forms mt-md-3 mt-2 mb-md-0 mb-3">
 				<span class="mx-lg-4 mx-md-2  mx-1">
-					<a href="#" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
+					<a href="login" >
 						<i class="fas fa-lock"></i> Sign In</a>
 				</span>
 				<span>
-					<a href="#" data-toggle="modal" data-target="#exampleModal1" >
+					<a href="signup" >
 						<i class="fas fa-user"></i> Register</a>
 				</span>
 			</div>
+			<?php
+			}
+			?>
 		</div>
 	</div>
 

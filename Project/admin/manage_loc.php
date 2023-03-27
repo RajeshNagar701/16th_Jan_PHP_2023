@@ -30,17 +30,26 @@ include_once('header.php');
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Ahmedabad</td>
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
-											</td>
-                                        
-                                            
-                                        </tr>
+                                       <?php
+									if(!empty($countries_arr))
+									{
+										foreach($countries_arr as $data)
+										{
+										?>
+											<tr class="odd gradeX">
+												<td><?php echo $data->cid;?></td>
+												<td><?php echo $data->cnm;?></td>
+												
+												<td>
+													<a href="#" class="btn btn-primary">Edit</a>
+													<a href="#" class="btn btn-danger">Delete</a>
+													<a href="#" class="btn btn-success">Status</a>
+												</td>        
+											</tr>
+										<?php
+										}
+									}
+									?>    
                                         
                                     </tbody>
                                 </table>

@@ -1,3 +1,14 @@
+<?php
+if(isset($_SESSION['aid']))
+{
+	echo "
+		<script>
+		window.location='dashboard';
+		</script>
+		";
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -31,10 +42,10 @@
                         <form role="form" method="post">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="E-mail" name="anm" type="text" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Password" name="apass" type="password" value="">
                                 </div>
                                 <div class="checkbox">
                                     <label>
@@ -42,7 +53,7 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.php" class="btn btn-lg btn-success btn-block">Login</a>
+                                <input type="submit" name="submit" value="Login" class="btn btn-lg btn-success btn-block">
                             </fieldset>
                         </form>
                     </div>

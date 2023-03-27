@@ -1,32 +1,34 @@
 <?php
+if(isset($_SESSION['uid']))
+{
+	echo "
+		<script>
+		window.location='index';
+		</script>
+		";
+}
 include_once('header.php');
 ?>
 
 <!-- Contact -->
 <section class="contact py-5">
 	<div class="container py-lg-5">
-		<h1 class="heading text-capitalize text-center">Contact Us</h1>
+		<h1 class="heading text-capitalize text-center">Login Us</h1>
 		<h5 class="heading mb-5 text-center">Taxi Cab</h5>
 		<div class="row agile-contact-form">
-			<div class="col-md-6 contact-form-left map">
-				<div class="w3layouts-contact-form-top">
+			
+			<div class="col-md-12 mt-md-0 mt-4 contact-form-right">
 				<div class="contact-form-top">
-					<h3>Locate Us</h3>
+					<h3>Login Us</h3>
 				</div>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381268.89304075!2d-108.26956901768942!3d34.145820117962906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4b0d03d337cc6ad9%3A0x9968b72aa2438fa5!2sCanada!5e0!3m2!1sen!2sin!4v1524478277945" allowfullscreen></iframe>
-				</div>
-				
-			</div>
-			<div class="col-md-6 mt-md-0 mt-4 contact-form-right">
-				<div class="contact-form-top">
-					<h3>Send us a message</h3>
-				</div>
-				<div class="agileinfo-contact-form-grid">
-					<form action="" method="post">
-						<input type="text" name="name" placeholder="Name" required="">
-						<input type="text" name="sub" placeholder="Subject" required="">
-						<textarea name="msg" placeholder="Message" required=""></textarea>
-						<input type="submit" name="submit" value="Submit" class="btn1">
+				<div >
+					<form action="" method="post" enctype="multipart/form-data">
+						
+						<input type="text" name="unm" placeholder="User Name" class="form-control" required=""><br>
+						<input type="password" name="pass" placeholder="Password" class="form-control" required=""><br>
+						
+						
+						<input type="submit" class="btn btn-warning" name="submit" value="Submit" class="btn1">
 					</form>
 				</div>
 			</div>

@@ -1,3 +1,19 @@
+<?php
+if(isset($_SESSION['aid']))
+{
+	
+}
+else
+{
+	echo "
+		<script>
+		window.location='admin';
+		</script>
+		";
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -238,7 +254,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i>Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
+                        <li><a href="adminlogout"><i class="fa fa-sign-out fa-fw"></i>Logout</a>
                         </li>
                     </ul>
                     <!-- end dropdown-user -->
@@ -263,7 +279,7 @@
                                 <img src="assets/img/user.jpg" alt="">
                             </div>
                             <div class="user-info">
-                                <div>Jonny <strong>Deen</strong></div>
+                                <div><?php echo $_SESSION['admin']?></div>
                                 <div class="user-text-online">
                                     <span class="user-circle-online btn btn-success btn-circle "></span>&nbsp;Online
                                 </div>

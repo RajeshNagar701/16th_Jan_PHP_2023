@@ -25,23 +25,34 @@ include_once('header.php');
                                     <thead>
                                         <tr>
                                             <th>Contact ID</th>
-                                            <th> Name</th>
-                                            <th>Action</th>
+                                            <th>Name</th>
+                                            <th>Sub</th>
+											<th>Message</th>
+											<th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>1</td>
-                                            <td>Ahmedabad</td>
-                                            <td>
-												<a href="#" class="btn btn-primary">Edit</a>
-												<a href="#" class="btn btn-danger">Delete</a>
-												<a href="#" class="btn btn-success">Status</a>
-											</td>
-                                        
-                                            
-                                        </tr>
-                                        
+									<?php
+									if(!empty($contact_arr))
+									{
+										foreach($contact_arr as $data)
+										{
+										?>
+											<tr class="odd gradeX">
+												<td><?php echo $data->conatact_id;?></td>
+												<td><?php echo $data->name;?></td>
+												<td><?php echo $data->sub;?></td>
+												<td><?php echo $data->msg;?></td>
+												<td>
+													<a href="#" class="btn btn-primary">Edit</a>
+													<a href="#" class="btn btn-danger">Delete</a>
+													<a href="#" class="btn btn-success">Status</a>
+												</td>        
+											</tr>
+										<?php
+										}
+									}
+									?>    
                                     </tbody>
                                 </table>
                             </div>

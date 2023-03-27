@@ -24,21 +24,34 @@ include_once('header.php');
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Emp ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
-                                        </tr>
+                                       <?php
+									if(!empty($emp_arr))
+									{
+										foreach($emp_arr as $data)
+										{
+										?>
+											<tr class="odd gradeX">
+												<td><?php echo $data->emp_id;?></td>
+												<td><?php echo $data->name;?></td>
+												<td><?php echo $data->email;?></td>
+												
+												<td>
+													<a href="#" class="btn btn-primary">Edit</a>
+													<a href="#" class="btn btn-danger">Delete</a>
+													<a href="#" class="btn btn-success">Status</a>
+												</td>        
+											</tr>
+										<?php
+										}
+									}
+									?>    
                                         
                                     </tbody>
                                 </table>
